@@ -23,7 +23,14 @@ nav a{
 h1,h4{
   color:coral;
 }
-
+#j{
+color:black;
+}
+h3{
+  font-weight: bolder;
+  font-size: x-large;
+  color: yellow;
+}
 .container{
   width: 80%;
   min-width: 400px;
