@@ -1,4 +1,4 @@
-#!/home/scar/Documents/flash-cards/virtual/bin/python
+#!/home/scar/Downloads/data/virtual/bin/python
 from django.core import management
 
 if __name__ == "__main__":
