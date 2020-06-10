@@ -1,9 +1,15 @@
 body {
   margin: 0;
+  font-family: 'Yatra One', cursive;
+  /*  background-image: url(https://bit.ly/2uz4VkJ); */
+  background-image: url("https://bit.ly/2xUuL4s");
+   background-attachment: fixed;
+   background-size: cover;
 }
 
 nav {
-  background: #d0f1b0;
+  /*background: burlywood;*/
+  background: yellow;
   padding: 5px;
   border-radius: 5px;
 }
@@ -14,6 +20,9 @@ nav a{
   font-size: 1.25em;
   padding: 5px;
 }
+h1,h4{
+  color: orangered;
+}
 
 .container{
   width: 80%;
@@ -23,9 +32,10 @@ nav a{
 
 .homepage-banner{
   text-align: center;
-  color: #648e2c;
+  color: black;
   font-size: 2em;
   max-width: 100%;
+  font-family: 'Amiri', serif;
 }
 
 .homepage-banner hr{
@@ -36,7 +46,7 @@ nav a{
   display: block;
   width: 200px;
   margin: 10px auto;
-  background-color: #4CAF50;
+  background-color:rgba(0,0,0, 0.9);
   border: none;
   border-radius: 10px;
   color: white;
@@ -46,7 +56,11 @@ nav a{
 }
 
 .blue-background {
-  background: blue;
+  background: rgb(32, 178, 170,0.9);
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
 }
 
 .deck-header{
