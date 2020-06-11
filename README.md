@@ -10,3 +10,6 @@ Flashcards website that helps in studying for a really big test in school.
 [Flashcards](https://.herokuapp.com/)
 
 ## Contributing
+You can contribute by sending pull requests to the code.
+
+## Author
