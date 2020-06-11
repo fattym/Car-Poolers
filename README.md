@@ -13,3 +13,6 @@ Flashcards website that helps in studying for a really big test in school.
 You can contribute by sending pull requests to the code.
 
 ## Author
+
+* **DENNIS MWANIKI** - (https://github.com/dennismwaniki67)
+* **JOSEPH NGANGA** - (https://github.com/fattym)
