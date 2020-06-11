@@ -8,3 +8,5 @@ Flashcards website that helps in studying for a really big test in school.
 
 ## Watch in action
 [Flashcards](https://.herokuapp.com/)
+
+## Contributing
