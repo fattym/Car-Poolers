@@ -6,10 +6,10 @@
     <h1>{{deck_obj}}</h1>
   </div>
   <div class="deck-header-actions">
-    <a href="{% url 'flashcards:editDeck' deck_obj.id %}">edit deck</a><br>
-    <a href="{% url 'flashcards:createCard' deck_obj.id %}">add card</a><br>
+    <a class="w3-button w3-round w3-blue" href="{% url 'flashcards:editDeck' deck_obj.id %}"><b>+ </b>edit deck</a><br><br>
+    <a class="w3-button w3-round w3-blue" href="{% url 'flashcards:createCard' deck_obj.id %}"><b>+ </b>add card</a><br>
     {% if card_obj %}
-      <a href="{% url 'flashcards:editCard' card_obj.id %}">edit current card</a><br> 
+      <a class="w3-button w3-round w3-blue" href="{% url 'flashcards:editCard' card_obj.id %}"><b>+ </b>edit current card</a><br> 
     {% endif %}
   </div>
 </div>

@@ -4,11 +4,11 @@
     <h1>uStudy</h1>
     <hr>
     <h4>Please select a deck below!</h4>
-    <a class='blue-background my-button' href="{% url 'flashcards:createDeck' %}">Create New Deck</a>
+    <div><a class='blue-background my-button' href="{% url 'flashcards:createDeck' %}">Create New Deck</a></div>
 
       {% if decks %}
           {% for deck in decks %}
-            <a class='my-button' href="{% url 'flashcards:viewDeck' deck.id %}">{{deck.title}}</a>
+            <div><a class='my-button' href="{% url 'flashcards:viewDeck' deck.id %}">{{deck.title}}</a></div>
           {% endfor %}
       {% else %}
         <h1>No Decks Found! Contact an Admin!</h1>
