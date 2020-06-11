@@ -23,3 +23,4 @@ urlpatterns = [
     url(r'^flashcards/', include('flashcards.urls', namespace='flashcards')),
     url(r'^admin/', admin.site.urls),
 ]
+

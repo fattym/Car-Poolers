@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/scar/Downloads/data/virtual"
+set -gx VIRTUAL_ENV "/home/dk/Desktop/nganga/Flash-cardsFlash/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

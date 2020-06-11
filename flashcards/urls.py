@@ -1,9 +1,13 @@
 #FLASHCARDS URL CONF
 from django.conf.urls import url
-
 from . import views
+from .views import SignUpView
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
+    url('signup/', SignUpView.as_view(), name='signup'),
     url(r'^$', views.home, name='home'),
     url(r'decks/create/', views.createDeck, name='createDeck'),
     url(r'decks/edit/(?P<deck_id>[\d]+)', views.editDeck, name='editDeck'),
