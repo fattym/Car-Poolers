@@ -1,4 +1,4 @@
-#!/home/scar/Documents/flash-cards/virtual/bin/python
+#!/home/scar/Downloads/data/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

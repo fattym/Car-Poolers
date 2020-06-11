@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="deck-header">
+  <div class="deck-header-title">
+    <h1>{{deck_obj}}</h1>
+  </div>
+  <div class="deck-header-actions">
+    <a class="w3-button w3-round w3-blue" href="{% url 'flashcards:editDeck' deck_obj.id %}"><b>+ </b>edit deck</a><br><br>
+    <a class="w3-button w3-round w3-blue" href="{% url 'flashcards:createCard' deck_obj.id %}"><b>+ </b>add card</a><br>
+    {% if card_obj %}
+      <a class="w3-button w3-round w3-blue" href="{% url 'flashcards:editCard' card_obj.id %}"><b>+ </b>edit current card</a><br> 
+    {% endif %}
+  </div>
+</div>
+
+
+<hr>
+{% if card_obj %}
+  <p>{{card_obj.front}}</p>
+  <p>{{card_obj.back}}</p>
+{% else %}
+  <p>No card found. Have you tried to add one?</p>
+{% endif %}
+
+{% endblock %}
