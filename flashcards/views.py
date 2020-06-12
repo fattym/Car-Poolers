@@ -4,7 +4,7 @@ from django.shortcuts import (
         render,
     )
 from .forms import CardForm, DeckForm
-from .models import Card, Deck
+from .models import Card, Deck,Profile
 
 # Create your views here.
 def home(request):

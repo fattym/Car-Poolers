@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Deck, Card
+from .models import Deck, Card,Profile
 
 def push_live(modeladmin, request, queryset):
     rows_updated = queryset.update(is_active=True)
@@ -20,6 +20,8 @@ class DeckAdmin(admin.ModelAdmin):
 class CardAdmin(admin.ModelAdmin):
     pass
 
+
 # Register your models here.
+admin.site.register(Profile)
 admin.site.register(Deck, DeckAdmin)
 admin.site.register(Card, CardAdmin)

@@ -1,4 +1,3 @@
-
 from django.db import models
 
 # Create your models here.
@@ -12,7 +11,7 @@ from pyuploadcare.dj.models import ImageField
 class Profile(models.Model):
     bio = HTMLField()
     photo = ImageField(blank = True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     following = models.ManyToManyField(User, related_name='followers')
     
     @receiver(post_save, sender=User)
@@ -53,28 +52,59 @@ class Profile(models.Model):
         return self.user.username
 
 
+class Image(models.Model):
+    name = models.CharField(max_length = 50)
+    picture = ImageField(blank = True, manual_crop = '1080x1080')
+    caption = HTMLField()
+    posted = models.DateTimeField(auto_now_add=True)
+    profile = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile_det = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
+    
 
-class Deck(models.Model):
-    title = models.CharField(max_length=64, null=False, blank=False)
-    description = models.CharField(max_length=255, null=False, blank=True)
-    is_active = models.BooleanField(default=False)
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    def is_liked(self):
+        pass
+
+        
+    @classmethod
+    def update_caption(self, caption):
+        update_img = cls.objects.filter(id = id).update(caption = caption)
+        return update_img
+
+    @classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.filter(id = id).all()
+        return image
+
+    @classmethod
+    def get_profile_pic(cls, profile):
+        images = Image.objects.filter(profile__pk = profile)
+        return images
+
+    @property
+    def count_comments(self):
+        comments = self.comments.count()
+        return comments
+
+    @property
+    def count_likes(self):
+        likes = self.likes.count()
+        return likes
+
 
     def __str__(self):
-        return self.title
+        return self.name
 
-    def get_number_of_cards(self):
-        '''
-        Returns the number of cards in the decks related
-        card_set
-        '''
-        return self.card_set.count()
-    get_number_of_cards.short_description = 'Card Count'
-
-class Card(models.Model):
-    parentDeck = models.ForeignKey(Deck, on_delete=models.CASCADE)
-    front = models.TextField()
-    back = models.TextField()
-
-    def __str__(self):
-        return self.front
+    class Meta:
+        ordering = ['posted']

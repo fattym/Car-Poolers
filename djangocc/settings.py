@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'flashcards',
     
 ]
+UPLOADCARE = {
+    'pub_key': '5f85acd4879c97908f0a',
+    'secret': '61b73169f490cd8119fa'
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
