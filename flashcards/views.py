@@ -1,12 +1,29 @@
-from django.shortcuts import (
-        get_object_or_404,
-        HttpResponseRedirect,
-        render,
-    )
-from .forms import CardForm, DeckForm
-from .models import Card, Deck
+from django.shortcuts import render, redirect,get_object_or_404
+from django.views.generic import ListView, DetailView
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.urls import reverse_lazy
+from .forms import CardForm, DeckForm,UserRegisterForm
+from django.views import generic
+from .models import *
+from django.db.models import Avg
+
 
 # Create your views here.
+class CardListView(ListView):
+    model = Card
+    template_name = 'flashcards/createandeditCard.html'
+
+
+class DeckDetailView(DetailView): 
+    model = Deck
+    template_name = 'createandeditDeck.html'
+
+    
+class SignUpView(generic.CreateView):
+    form_class = UserRegisterForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
+    
 def home(request):
     '''
     Renders the FLASHCARD app home template
